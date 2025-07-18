@@ -1,50 +1,253 @@
-# Welcome to your Expo app 👋
+<div align="center">
+  <br />
+    <img src="/assets/images/cover.png" alt="Banner do Projeto">
+  </a>
+  <br />
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+  <div>
+    <img src="https://img.shields.io/badge/-React_Native-black?style=for-the-badge&logoColor=white&logo=react&color=61DAFB" alt="React Native" />
+    <img src="https://img.shields.io/badge/-Expo-black?style=for-the-badge&logoColor=white&logo=expo&color=000020" alt="Expo" />
+    <img src="https://img.shields.io/badge/-TypeScript-black?style=for-the-badge&logoColor=white&logo=typescript&color=3178C6" alt="TypeScript" />
+    <img src="https://img.shields.io/badge/-Tailwind_CSS-black?style=for-the-badge&logoColor=white&logo=tailwindcss&color=06B6D4" alt="Tailwind CSS" />
+    <img src="https://img.shields.io/badge/-Appwrite-black?style=for-the-badge&logoColor=white&logo=appwrite&color=F02E65" alt="Appwrite" />
+  </div>
 
-## Get started
+<h3 align="center">Aplicativo para Descoberta de Filmes com Busca Avançada</h3>
 
-1. Install dependencies
+  <div align="center">
+    Construa este projeto passo a passo com o tutorial completo no canal <a href="https://www.youtube.com/@javascriptmastery/videos" target="_blank"><b>JavaScript Mastery</b></a>. Junte-se à comunidade JSM!
+  </div>
+</div>
 
-   ```bash
-   npm install
-   ```
+## 📋 <a name="table">Índice</a>
 
-2. Start the app
+1. 🤖 [Introdução](#introducao)
+2. ⚙️ [Tecnologias Utilizadas](#tech-stack)
+3. 🔋 [Funcionalidades](#features)
+4. 🤸 [Início Rápido](#quick-start)
+5. 🕸️ [Trechos de Código](#snippets)
+6. 🔗 [Recursos](#links)
+7. 🚀 [Mais Informações](#more)
 
-   ```bash
-   npx expo start
-   ```
 
-In the output, you'll find options to open the app in a
+## <a name="introducao">🤖 Introdução</a>
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+Construído com Expo, TypeScript e Tailwind CSS, este app consome dados da API de filmes e implementa um algoritmo de popularidade usando Appwrite. Ele proporciona aos usuários uma navegação fluida, classificando os filmes com base em diferentes métricas de engajamento. A interface é moderna, responsiva e escalável para uso real.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## <a name="tech-stack">⚙️ Tecnologias Utilizadas</a>
 
-## Get a fresh project
+- Expo
+- React Native
+- Appwrite
+- TypeScript
+- Tailwind CSS
 
-When you're ready, run:
+## <a name="features">🔋 Funcionalidades</a>
+
+### Principais recursos do aplicativo:
+
+👉 **Dados em tempo real**: consumo e exibição de filmes atualizados  
+👉 **Tela inicial**: filmes em destaque e recomendações  
+👉 **Busca**: encontre filmes pelo nome  
+👉 **Algoritmo de popularidade**: classifica filmes com base nas pesquisas dos usuários
+
+...e muito mais, incluindo arquitetura de código reutilizável.
+
+## <a name="quick-start">🤸 Início Rápido</a>
+
+Siga os passos abaixo para rodar o projeto localmente:
+
+### Pré-requisitos
+
+Certifique-se de ter instalado:
+
+- [Git](https://git-scm.com/)
+- [Node.js](https://nodejs.org/en)
+- [npm](https://www.npmjs.com/)
+
+### Clonando o Repositório
 
 ```bash
-npm run reset-project
+git clone https://github.com/Rafael01Gx/react-native-playground.git
+cd react-native-playground
+
+**Instalação**
+
+Instale as dependências do projeto usando npm:
+
+```bash
+
+npm install
+
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+**Configuração das Variáveis de Ambiente**
 
-## Learn more
+Crie um novo arquivo com nome `.env` na raiz do projeto e adicione:
 
-To learn more about developing your project with Expo, look at the following resources:
+```env
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+EXPO_PUBLIC_MOVIE_API_KEY=
 
-## Join the community
+EXPO_PUBLIC_APPWRITE_PROJECT_ID=
 
-Join our community of developers creating universal apps.
+EXPO_PUBLIC_APPWRITE_DATABASE_ID=
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+EXPO_PUBLIC_APPWRITE_COLLECTION_ID=
+
+
+
+```
+
+Substitua os valores do espaço reservado pela sua chave de API do TMDB, ID do projeto Appwrite, ID do banco de dados e ID da coleção. Você pode obter essas credenciais cadastrando-se no [Appwrite](https://cloud.appwrite.io/console/login), [TMDB](https://www.themoviedb.org/login).
+
+**Executando o Projeto**
+
+```bash
+
+npx expo start
+
+```
+
+
+Abra o aplicativo ExpoGO no seu telefone e escaneie o código QR para visualizar o projeto.
+
+## <a name="snippets">🕸️ Trechos de Código</a>
+
+<details>
+
+<summary><code>tailwind.config.js</code></summary>
+
+```typescript
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ["./app/**/*.{js,jsx,ts,tsx}", "./components/**/*.{js,jsx,ts,tsx}"],
+  presets: [require("nativewind/preset")],
+  theme: {
+    extend: {
+      colors: {
+        primary: "#030014",
+        secondary: "#151312",
+        ratingBox: "#221F3D",
+        searchBar: "#0F0D23",
+        text: "#9CA4AB",
+        darkAccent: "#AB8BFF",
+        accentText: "#A8B5DB",
+        secondaryText: "#D6C7FF",
+      },
+    },
+  },
+  plugins: [],
+};
+```
+
+</details>
+
+<details>
+
+<summary><code>app/globals.css</code></summary>
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+</details>
+
+<details>
+
+<summary><code>interfaces/interfaces.d.ts</code></summary>
+
+```typescript
+interface Movie {
+  id: number;
+  title: string;
+  adult: boolean;
+  backdrop_path: string;
+  genre_ids: number[];
+  original_language: string;
+  original_title: string;
+  overview: string;
+  popularity: number;
+  poster_path: string;
+  release_date: string;
+  video: boolean;
+  vote_average: number;
+  vote_count: number;
+}
+
+interface TrendingMovie {
+  searchTerm: string;
+  movie_id: number;
+  title: string;
+  count: number;
+  poster_url: string;
+}
+
+interface MovieDetails {
+  adult: boolean;
+  backdrop_path: string | null;
+  belongs_to_collection: {
+    id: number;
+    name: string;
+    poster_path: string;
+    backdrop_path: string;
+  } | null;
+  budget: number;
+  genres: {
+    id: number;
+    name: string;
+  }[];
+  homepage: string | null;
+  id: number;
+  imdb_id: string | null;
+  original_language: string;
+  original_title: string;
+  overview: string | null;
+  popularity: number;
+  poster_path: string | null;
+  production_companies: {
+    id: number;
+    logo_path: string | null;
+    name: string;
+    origin_country: string;
+  }[];
+  production_countries: {
+    iso_3166_1: string;
+    name: string;
+  }[];
+  release_date: string;
+  revenue: number;
+  runtime: number | null;
+  spoken_languages: {
+    english_name: string;
+    iso_639_1: string;
+    name: string;
+  }[];
+  status: string;
+  tagline: string | null;
+  title: string;
+  video: boolean;
+  vote_average: number;
+  vote_count: number;
+}
+
+interface TrendingCardProps {
+  movie: TrendingMovie;
+  index: number;
+}
+```
+
+</details>
+
+## <a name="links">🔗 Assets</a>
+
+- Os arquivos utilizados neste projeto estão localizados na pasta [`assets/`](./assets/) do repositório.
+
+## <a name="more">🙏 Créditos</a>
+
+Este projeto foi inspirado e baseado no conteúdo criado por [JavaScript Mastery](https://www.youtube.com/@javascriptmastery).  
+Agradecimentos especiais à equipe do canal pelo incrível trabalho educativo e pelos tutoriais de alta qualidade que tornam o aprendizado acessível, moderno e prático para a comunidade de desenvolvedores.
+
+> Siga o canal e acompanhe os tutoriais: [JavaScript Mastery no YouTube](https://www.youtube.com/@javascriptmastery)
