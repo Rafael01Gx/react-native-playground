@@ -1,6 +1,6 @@
 <div align="center">
   <br />
-    <img src="/assets/images/cover.png" alt="Banner do Projeto">
+    <img src="/assets/images/cover.png" alt="Banner do Projeto" width="700">
   </a>
   <br />
 
