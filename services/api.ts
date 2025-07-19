@@ -22,3 +22,21 @@ export const fetchMovies = async ({ query }: { query: string }) => {
     const data = await response.json();
     return data.results;
 }
+
+export const fetchMovieDetails = async (movieId: string) => {
+    try {
+        const response = await fetch(`${TMDB_CONFIG.BASE_URL}/movie/${movieId}?api_key=${TMDB_CONFIG.API_KEY}&language=pt-BR`, {
+            method: 'GET',
+            headers: TMDB_CONFIG.headers,
+        });
+
+        if (!response.ok) {
+            throw new Error('Erro ao buscar detalhes');
+        }
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.log(error)
+        throw error;
+    }
+}
