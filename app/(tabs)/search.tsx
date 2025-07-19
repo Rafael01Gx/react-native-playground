@@ -55,7 +55,7 @@ const Search = () => {
             ListHeaderComponent={
             <>
                 <View className={"w-full flex-row justify-center mt-20 items-centers"}>
-                    <Image source={icons.logo} className="w-12 h-10" />
+                    <Image source={icons.logo} className="w-14 h-10" />
                 </View>
                 <View className="my-5">
                     <SearchBar placeholder="Buscar um filme..."
