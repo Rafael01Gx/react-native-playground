@@ -80,23 +80,23 @@ const Details = () => {
                         </Text>
 
                         <Text className="text-light-200 text-sm">
-                            ({movie?.vote_count} votes)
+                            ({movie?.vote_count} votos)
                         </Text>
                     </View>
 
-                    <MovieInfo label="Overview" value={movie?.overview} />
+                    <MovieInfo label="Sinopse" value={movie?.overview} />
                     <MovieInfo
-                        label="Genres"
+                        label="Gêneros"
                         value={movie?.genres?.map((g:{name:string}) => g.name).join(" • ") || "N/A"}
                     />
 
                     <View className="flex flex-row justify-between w-1/2">
                         <MovieInfo
-                            label="Budget"
+                            label="Orçamento"
                             value={`$${(movie?.budget ?? 0) / 1_000_000} million`}
                         />
                         <MovieInfo
-                            label="Revenue"
+                            label="Bilheteria"
                             value={`$${Math.round(
                                 (movie?.revenue ?? 0) / 1_000_000
                             )} million`}
@@ -104,7 +104,7 @@ const Details = () => {
                     </View>
 
                     <MovieInfo
-                        label="Production Companies"
+                        label="Produção"
                         value={
                             movie?.production_companies?.map((c:{name:string }) => c.name).join(" • ") ||
                             "N/A"
@@ -122,7 +122,7 @@ const Details = () => {
                     className="size-5 mr-1 mt-0.5 rotate-180"
                     tintColor="#fff"
                 />
-                <Text className="text-white font-semibold text-base">Go Back</Text>
+                <Text className="text-white font-semibold text-base">Voltar</Text>
             </TouchableOpacity>
         </View>
     );
